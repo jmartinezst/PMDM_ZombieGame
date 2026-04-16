@@ -1,0 +1,35 @@
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Vv]isual[Ss]tudio.Queries/
+/[Dd]erived[Dd]ata/
+/UserSettings/
+/MemoryCaptures/
+/Logs/
+/BurstDebugInformation_DoNotShip/
+
+
+/Assets/Halloween Pack-Cemetery Snap/
+/Assets/ToonyTinyPeople/
+/Assets/StarterAssets/
+/Assets/Settings/
+/Assets/TextMesh Pro
+
+# Ignorar TODAS las carpetas de Backup de Build
+/[Bb]uild*/
+*BackUpThisFolder_ButDontShipItWithYourGame*/
+*BurstDebugInformation_DoNotShip*/
+
+# Archivos de símbolos y APKs
+*.symbols.zip
+*.apk
+
+
+
+# Ignorar archivos específicos que veo en tu captura
+*.apk
+*.symbols.zip
+*.slnx
+.utmp/
