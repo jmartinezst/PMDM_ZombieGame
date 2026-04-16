@@ -29,7 +29,7 @@ public class BalaScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Zombi"))
+        if(other.CompareTag("Enemy"))
         {
             other.GetComponent<ZombiBrain>().morir();
 

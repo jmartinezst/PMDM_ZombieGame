@@ -7,38 +7,39 @@ public class Zombi_Patrulla : MonoBehaviour
     public Transform[] points;
         private int destPoint = 0;
         private NavMeshAgent agent;
+        public float baseSpeed =3.5f;
 
 
-        void Start () {
+        void Start () 
+        {
             agent = GetComponent<NavMeshAgent>();
-
-            // Disabling auto-braking allows for continuous movement
-            // between points (ie, the agent doesn't slow down as it
-            // approaches a destination point).
+            agent.speed= baseSpeed;
             agent.autoBraking = false;
-
             GotoNextPoint();
         }
 
 
-        void GotoNextPoint() {
-            // Returns if no points have been set up
-            if (points.Length == 0)
-                return;
+        void GotoNextPoint() 
+        {
+            if (points.Length == 0) return;
 
-            // Set the agent to go to the currently selected destination.
             agent.destination = points[destPoint].position;
-
-            // Choose the next point in the array as the destination,
-            // cycling to the start if necessary.
             destPoint = (destPoint + 1) % points.Length;
         }
 
 
-        void Update () {
-            // Choose the next destination point when the agent gets
-            // close to the current one.
+        void Update () 
+        {
             if (!agent.pathPending && agent.remainingDistance < 0.5f)
                 GotoNextPoint();
+        }
+
+        public void detenerAgente()
+        {
+            agent.speed =0;
+        }
+         public void reanudarAgente()
+        {
+            agent.speed =baseSpeed;
         }
     }

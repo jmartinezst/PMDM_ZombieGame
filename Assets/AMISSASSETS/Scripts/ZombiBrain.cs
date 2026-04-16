@@ -28,16 +28,21 @@ public GameObject goopFX;
    
     public void morir()
     {
+        //detener movimiento
+        GetComponent<Zombi_Patrulla>().detenerAgente();
         //sonido muerte
         source.PlayOneShot(sonidoMuerte);
         //animacion muerte
-
+        anim.SetBool("estaVivo",false);
         //Efecto muerte
         activaEfectoMuerte();
+   
+    }
 
-        //desactivar
-        anim.SetTrigger("Muerto");
-        
+    public void restaurar()
+    {
+        GetComponent<Zombi_Patrulla>().reanudarAgente();
+        anim.SetBool("estaVivo",true);
     }
 
     public void activaEfectoMuerte()
@@ -49,7 +54,7 @@ public GameObject goopFX;
     public void desactivaEfectoMuerte()
     {
         goopFX.SetActive(false);
-
+        ZombiPool.Instance.GuardarZombi(this.gameObject);
     }
     
     

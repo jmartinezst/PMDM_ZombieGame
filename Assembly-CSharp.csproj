@@ -69,6 +69,7 @@
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\StarterAssets\FirstPersonController\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\PlayerActions.cs" />
+    <Compile Include="Assets\AMISSASSETS\Scripts\ZombiPool.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\ZombiBrain.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\Zombi_Patrulla.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
