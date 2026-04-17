@@ -14,7 +14,9 @@ public class MenuManager : MonoBehaviour
 
     
 
-    // MÉTODOS PARA LANZAR LOS EVENTOS CON LOS BOTONES 
+    // MÉTODOS PARA LANZAR LOS EVENTOS CON LOS BOTONES:
+    // Se necesitan publicos para que el player pueda localizarlos y vincular sus acciones a estos eventos, 
+    // ya que estan en escenas diferentes.
     public void ClickBoton1()
     { 
         OnAccion1.Invoke();
@@ -32,57 +34,86 @@ public class MenuManager : MonoBehaviour
 
 
     // CAMBIO DE ESCENAS
-    public void cargarEscena0()
+    public void cargarEscenaMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadScene(1);
+        gestorPaneles.abrirMenu();
     }
 
-   public void cargarEscena1()
+   public void cargarEscenaJuego()
     {
-        SceneManager.LoadSceneAsync(1);    
-        gestorPaneles.volverAlJuego();
-        gestorPaneles.activarJoystick();
+        SceneManager.LoadScene(2);    
+        gestorPaneles.abrirControles();
     }
 
-    public void cargarEscena2()
+    public void cargarEscenaFinal()
     {
-        SceneManager.LoadSceneAsync(2);
-        gestorPaneles.volverAlJuego();
+        SceneManager.LoadScene(3);
+        gestorPaneles.abrirControles();
     }
 
 
     /// OPCIONES DE MENU Y  AJUSTES
     public void abrirAjustes()
     {
-       gestorPaneles.abrirAjustes();
+        int x = SceneManager.GetActiveScene().buildIndex;
+        if(x ==2)
+        {
+        Debug.Log("Ajustes de escena 2");
+        gestorPaneles.abrirAjustes();
+        ponerPausa();
+        }
+        else
+        {
+        Debug.Log("Ajustes de escena" + x);
+        gestorPaneles.abrirAjustes();   
+        }
     }
 
     public void salirDelJuego()
     {
         Application.Quit();
     }
+
+
     
-    public void ponerPausa()
+    void ponerPausa()
     {
-        Time.timeScale = 0f;
-        gestorPaneles.abrirAjustes();
+        Time.timeScale = 0f;       
     }
-    public void quitarPausa()
+
+    void quitarPausa()
     {
         Time.timeScale = 1f;
     }
 
+
+
+public void volver()
+   {
+
+      int x = SceneManager.GetActiveScene().buildIndex;
+      if(x ==2)
+      {
+          volverAlJuego();
+          quitarPausa();
+      }
+      else
+      {
+         volverAlMenu();
+      }
+   }
     public void volverAlJuego()
     {
-        gestorPaneles.volverAlJuego();
-        quitarPausa();
+        gestorPaneles.abrirControles();
+    
     }
 
     public void volverAlMenu()
     {
         ///Cerrar panel ajustes y habilitar joystick
-        gestorPaneles.volverAlMenu();
-        ponerPausa();
+        gestorPaneles.abrirMenu();
+       
     }
 
 
@@ -90,12 +121,12 @@ public class MenuManager : MonoBehaviour
     public void playerMuerto()
     {
         gestorPaneles.abriFinalDerrota();
-        ponerPausa();
+      
     }
 
     public void playerGano()
     {
-        cargarEscena2();
+        cargarEscenaFinal();
         gestorPaneles.abriFinalVictoria();
     }
 

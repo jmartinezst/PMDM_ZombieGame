@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/AMISSASSETS/Scenes/PreloadSingletons.unity
+    guid: b64b919a43b73d143b358cdf862c0d36
+  - enabled: 1
     path: Assets/AMISSASSETS/Scenes/MenuScene.unity
     guid: 38533b7846d8b4748bf3d536bd71f74d
   - enabled: 1

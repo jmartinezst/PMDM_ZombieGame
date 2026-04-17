@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class FinishScript : MonoBehaviour
 {
-
-
+  AudioSource source;
+  public AudioClip sonidoError;
   MenuManager menuManager;
   TMP_Text avisos;
 
@@ -14,14 +14,15 @@ public class FinishScript : MonoBehaviour
              menuManager = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MenuManager>();
              avisos = GameObject.FindGameObjectWithTag("AvisosText").GetComponent<TMP_Text>();
              if(avisos == null) Debug.LogWarning("No hay panel avisos en finishscript");
+             source = GetComponent<AudioSource>();
     }
   
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Algo entro");
+      
         if(other.gameObject.tag == "Player")
         {
-            Debug.Log("Es el player");
+            
             int herramientasPlayer = other.gameObject.GetComponent<PlayerInventario>().getHerramientasRecogidas();
 
             if(herramientasPlayer  >=3)
@@ -32,11 +33,17 @@ public class FinishScript : MonoBehaviour
             else
             {
                 Debug.Log("te faltan herramientas" + (3- herramientasPlayer));
-               
+                source.PlayOneShot(sonidoError);
                 avisos.SetText("te faltan herramientas" + (3- herramientasPlayer));
+                Invoke("borrarMensaje",2f);
             }
 
 
         }
+    }
+
+    public void borrarMensaje()
+    {
+       avisos.SetText(""); 
     }
 }

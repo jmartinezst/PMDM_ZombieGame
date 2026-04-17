@@ -67,7 +67,10 @@
     <Compile Include="Assets\AMISSASSETS\Scripts\DontDestroy.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\CanvasRoll.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
+    <Compile Include="Assets\AMISSASSETS\Scripts\Zombie_Ataque.cs" />
+    <Compile Include="Assets\AMISSASSETS\Scripts\CargaMenu.cs" />
     <Compile Include="Assets\StarterAssets\FirstPersonController\Scripts\BasicRigidBodyPush.cs" />
+    <Compile Include="Assets\BTM_Assets\BTM_Items_Gems\Scripts\SimpleGemsAnim.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\PlayerActions.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\ZombiPool.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\ZombiBrain.cs" />

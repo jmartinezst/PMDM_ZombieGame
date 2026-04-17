@@ -26,8 +26,6 @@ public class GestorPaneles : MonoBehaviour
       grupoMenu = grupoMenuGO.GetComponent<CanvasGroup>();
       grupoAjustes = grupoAjustesGO.GetComponent<CanvasGroup>();
       grupoFinal = grupoFinalGO.GetComponent<CanvasGroup>();
-
-    
    }
 
    public void abrirAjustes()
@@ -38,55 +36,14 @@ public class GestorPaneles : MonoBehaviour
       modificarPanel(grupoMenu,0,false, false);
    }
 
-   public void volver()
+   public void abrirMenu()
    {
-
-      int x = SceneManager.GetActiveScene().buildIndex;
-      if(x ==0)
-      {
-         volverAlMenu();
-      }
-      else
-      {
-         volverAlJuego();
-      }
-   }
-
-   public void volverAlMenu()
-   {
-      modificarPanel(grupoHUD,0, false, false);
-      modificarPanel(grupoJoystick,0, false, false);
-      modificarPanel(grupoAjustes,0, false, false);
-      modificarPanel(grupoMenu,1, true, true);
-      modificarPanel(grupoFinal,0, false, false);
-   }
-
-   public void volverAlJuego()
-   {
-      modificarPanel(grupoHUD,1,false, false);
-      modificarPanel(grupoJoystick, 1, true, true);
+      modificarPanel(grupoHUD,0,false, false);
+      modificarPanel(grupoJoystick, 0,false, false);
       modificarPanel(grupoAjustes,0,false, false);
-      modificarPanel(grupoMenu,0 ,false, false);
+      modificarPanel(grupoMenu,1,true, true);
       modificarPanel(grupoFinal,0, false, false);
    }
-
-   
-
-  
-   ///AUXILIARES
-   public void modificarPanel(CanvasGroup grupo, int visibilidad, bool actuable, bool bloquea)
-   {
-      grupo.alpha =visibilidad;
-      grupo.interactable =actuable;
-      grupo.blocksRaycasts = bloquea;
-   }
-   public void activarJoystick()
-   {
-      grupoJoystickGO.SetActive(false); // se fuerza por si esta activo a volver a activarse
-      grupoJoystickGO.SetActive(true);
-   }
-
-   //DERROTA VICTORIA
 
    public void abriFinalDerrota()
    {
@@ -118,5 +75,36 @@ public class GestorPaneles : MonoBehaviour
     
       scrollGO.SetActive(true);
    }
+
+   
+
+   public void abrirControles()
+   {
+      modificarPanel(grupoHUD,1,false, false);
+      modificarPanel(grupoJoystick, 1, true, true);
+      modificarPanel(grupoAjustes,0,false, false);
+      modificarPanel(grupoMenu,0 ,false, false);
+      modificarPanel(grupoFinal,0, false, false);
+
+      activarJoystick();
+      
+   }
+
+
+   public void modificarPanel(CanvasGroup grupo, int visibilidad, bool actuable, bool bloquea)
+   {
+      grupo.alpha =visibilidad;
+      grupo.interactable =actuable;
+      grupo.blocksRaycasts = bloquea;
+   }
+   public void activarJoystick()
+   {
+      grupoJoystickGO.SetActive(false); // se fuerza por si esta activo a volver a activarse
+      grupoJoystickGO.SetActive(true);
+   }
+
+
+
+   
 
 }

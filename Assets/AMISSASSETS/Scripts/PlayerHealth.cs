@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        restablecerVida();
+       
         healthBarGO = GameObject.FindGameObjectWithTag("HealthBar");
         menuManager = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MenuManager>();
         barraSalud = healthBarGO.GetComponent<Image>(); 
@@ -22,6 +22,10 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.LogWarning("No detecto HealthBar");
         }
+    }
+    void Start()
+    {
+         restablecerVida();
     }
 
     public void restarVida(int cantidad)
