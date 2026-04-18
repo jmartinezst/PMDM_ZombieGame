@@ -16,6 +16,8 @@ public Vector2 posicionOriginal;
 Vector3 valorJoystick;
 
 NavMeshAgent agente;
+Animator anim;
+public GameObject animGO;
 
 
 
@@ -26,6 +28,7 @@ NavMeshAgent agente;
         StickRT = StickGO.GetComponent<RectTransform>();
 
         posicionOriginal = StickRT.anchoredPosition;
+        anim = animGO.GetComponent<Animator>();
     }
 
     void Update()
@@ -46,12 +49,13 @@ NavMeshAgent agente;
             Quaternion targetRotation = Quaternion.LookRotation(valorJoystick);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
 
-
+            anim.SetBool("estaAndando", true);
         }
         else
         {
             valorJoystick = Vector3.zero;
-            agente.Move(Vector3.zero);
+            agente.Move(Vector3.zero);   
+             anim.SetBool("estaAndando", false);       
         }
     }
 

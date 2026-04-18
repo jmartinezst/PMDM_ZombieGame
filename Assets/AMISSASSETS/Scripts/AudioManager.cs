@@ -24,7 +24,7 @@ public GameObject fxSliderGO;
     }
 
 
-    void Start()
+    void OnEnable()
     {
         Debug.Log("Cargando Volumen");
         cargarVolumen();

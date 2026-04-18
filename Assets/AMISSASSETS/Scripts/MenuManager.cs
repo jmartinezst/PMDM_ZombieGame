@@ -36,18 +36,21 @@ public class MenuManager : MonoBehaviour
     // CAMBIO DE ESCENAS
     public void cargarEscenaMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
         gestorPaneles.abrirMenu();
     }
 
    public void cargarEscenaJuego()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(2);    
         gestorPaneles.abrirControles();
     }
 
     public void cargarEscenaFinal()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(3);
         gestorPaneles.abrirControles();
     }
@@ -56,17 +59,19 @@ public class MenuManager : MonoBehaviour
     /// OPCIONES DE MENU Y  AJUSTES
     public void abrirAjustes()
     {
+        Time.timeScale = 0f;
         int x = SceneManager.GetActiveScene().buildIndex;
         if(x ==2)
         {
         Debug.Log("Ajustes de escena 2");
         gestorPaneles.abrirAjustes();
-        ponerPausa();
+        gestorPaneles.ActivarBotonMenu();
         }
         else
         {
         Debug.Log("Ajustes de escena" + x);
-        gestorPaneles.abrirAjustes();   
+        gestorPaneles.abrirAjustes();  
+        gestorPaneles.DesactivarBotonMenu(); 
         }
     }
 
@@ -76,33 +81,21 @@ public class MenuManager : MonoBehaviour
     }
 
 
-    
-    void ponerPausa()
-    {
-        Time.timeScale = 0f;       
-    }
-
-    void quitarPausa()
-    {
-        Time.timeScale = 1f;
-    }
 
 
-
-public void volver()
+    public void volver()
    {
-
+      Time.timeScale = 1f;
       int x = SceneManager.GetActiveScene().buildIndex;
       if(x ==2)
       {
           volverAlJuego();
-          quitarPausa();
       }
       else
       {
          volverAlMenu();
       }
-   }
+    }
     public void volverAlJuego()
     {
         gestorPaneles.abrirControles();
@@ -112,8 +105,7 @@ public void volver()
     public void volverAlMenu()
     {
         ///Cerrar panel ajustes y habilitar joystick
-        gestorPaneles.abrirMenu();
-       
+        gestorPaneles.abrirMenu();      
     }
 
 

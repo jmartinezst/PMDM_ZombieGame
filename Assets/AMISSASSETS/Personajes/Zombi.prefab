@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 110580698744396921}
   - component: {fileID: 5546286146022201017}
   - component: {fileID: 250255547235896666}
+  - component: {fileID: 7670991792292071163}
   m_Layer: 0
   m_Name: Zombi
   m_TagString: Enemy
@@ -164,6 +165,7 @@ MonoBehaviour:
   points:
   - {fileID: 0}
   - {fileID: 0}
+  baseSpeed: 3.5
 --- !u!136 &4830544096494155995
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -227,6 +229,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   animGO: {fileID: 352235736013308350}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   sonidoMuerte: {fileID: 8300000, guid: c0d41130fd5c54f4eb61d7a0f9b20844, type: 3}
   sonidoAtaque: {fileID: 8300000, guid: 0c3941e64298e6e48af923f5fd1746de, type: 3}
   goopFX: {fileID: 3065168696318903878}
@@ -242,7 +247,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 2526425953134569133, guid: 72a395c8d3909204296ff50e8367dec9, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -327,6 +332,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7670991792292071163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369545488453052772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7532d99f830a08847b8c0e802dbaa84d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombi_Ataque
+  rangoAtaque: 1.5
+  recargaAtaque: 1.5
 --- !u!1 &399814377159644745
 GameObject:
   m_ObjectHideFlags: 0

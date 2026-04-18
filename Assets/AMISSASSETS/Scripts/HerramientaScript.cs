@@ -6,6 +6,8 @@ public class HerramientaScript : MonoBehaviour
     AudioSource source;
     public AudioClip sonidoRecogida;
 
+    public GameObject modeloLlave;
+
     void Awake()
     {
         source= GetComponent<AudioSource>();
@@ -17,13 +19,18 @@ public class HerramientaScript : MonoBehaviour
      
         if(other.gameObject.tag == "Player")
         {
-          
+            
              other.gameObject.GetComponent<PlayerInventario>().sumaHerramientaRecogida();
              source.PlayOneShot(sonidoRecogida);
-
-            this.gameObject.SetActive(false);
+             modeloLlave.SetActive(false);
+             Invoke("Apagar",1f);
+            
 
         }
+    }
+    public void Apagar()
+    {
+        this.gameObject.SetActive(false);
     }
    
 }

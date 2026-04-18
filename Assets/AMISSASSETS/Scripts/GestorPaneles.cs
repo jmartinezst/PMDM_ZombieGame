@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GestorPaneles : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GestorPaneles : MonoBehaviour
    public GameObject grupoFinalGO;
 
    public GameObject scrollGO;
+   public Button botonVolverMenu;
 
    void Awake()
    {
@@ -102,6 +104,17 @@ public class GestorPaneles : MonoBehaviour
       grupoJoystickGO.SetActive(false); // se fuerza por si esta activo a volver a activarse
       grupoJoystickGO.SetActive(true);
    }
+
+   public void ActivarBotonMenu()
+   {
+      botonVolverMenu.gameObject.SetActive(true);
+   }
+   public void DesactivarBotonMenu()
+   {
+      botonVolverMenu.gameObject.SetActive(false);
+   }
+   
+   
 
 
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ZombiBrain : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public AudioClip sonidoAtaque;
 public GameObject goopFX;
 private bool estaVivo;
 
-
+private NavMeshAgent agente;
 
 
     void Awake()
@@ -29,11 +30,27 @@ private bool estaVivo;
         source= GetComponent<AudioSource>();
         modoAtaque = GetComponent<Zombi_Ataque>();
         modoPatrulla = GetComponent<Zombi_Patrulla>();
+        agente = GetComponent<NavMeshAgent>();
     }
 
 
 
+    void Start()
+    {
+        StartCoroutine("DetectionRoutine");
+    }
 
+    void Update()
+    {
+        if(agente.velocity != Vector3.zero)
+        {
+            anim.SetBool("estaAndando", true);
+        }
+        else
+        {
+            anim.SetBool("estaAndando", false);
+        }
+    }
 
 
    IEnumerator DetectionRoutine()
