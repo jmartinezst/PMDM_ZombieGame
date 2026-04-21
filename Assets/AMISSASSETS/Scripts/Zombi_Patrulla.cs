@@ -10,11 +10,15 @@ public class Zombi_Patrulla : MonoBehaviour
         public float baseSpeed =3.5f;
 
 
-        void Start () 
+        void Awake () 
         {
             agent = GetComponent<NavMeshAgent>();
             agent.speed= baseSpeed;
             agent.autoBraking = false;
+           
+        }
+        void OnEnable()
+        {
             GotoNextPoint();
         }
 

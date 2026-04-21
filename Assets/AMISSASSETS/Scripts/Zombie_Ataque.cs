@@ -5,7 +5,7 @@ public class Zombi_Ataque : MonoBehaviour
 {
 
     private NavMeshAgent agente;
-    private Transform player;
+    
 
     public float rangoAtaque = 1.5f; // Distancia para empezar a atacar
 
@@ -29,13 +29,13 @@ public class Zombi_Ataque : MonoBehaviour
 
     void Update()
     {
-        if (player == null || !agente.enabled) return;
+        if (playerTarget == null || !agente.enabled) return;
 
         // 1. Perseguir al jugador
-        agente.destination = player.position;
+        agente.destination = playerTarget.transform.position;
 
         // 2. Comprobar si estamos a distancia de ataque
-        float distancia = Vector3.Distance(transform.position, player.position);
+        float distancia = Vector3.Distance(transform.position, playerTarget.transform.position);
 
         if (distancia <= rangoAtaque)
         {
@@ -53,7 +53,9 @@ public class Zombi_Ataque : MonoBehaviour
             
             // Reproducir sonido de ataque desde el Brain
            
-          
+            //dañar al player
+            playerTarget.GetComponent<PlayerHealth>().restarVida(20);
+
             contadorRecargaActual = Time.time + recargaAtaque;
             Debug.Log("¡Zombi atacando!");
         }

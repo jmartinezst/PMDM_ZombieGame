@@ -17,6 +17,7 @@
 /Assets/Settings/
 /Assets/TextMesh Pro
 /Assets/BTM_Assets
+/Assets/UnityTechnologies
 
 # Ignorar TODAS las carpetas de Backup de Build
 /[Bb]uild*/

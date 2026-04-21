@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1264673844928216120, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1612576471582423247, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -246,6 +250,26 @@ PrefabInstance:
     - target: {fileID: 4880389084086073264, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072361234444861782, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_text
+      value: AVISO
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072361234444861782, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_fontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072361234444861782, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_fontStyle
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072361234444861782, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5072361234444861782, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
       objectReference: {fileID: 0}
     - target: {fileID: 7478970430600783376, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
       propertyPath: m_AnchorMax.y

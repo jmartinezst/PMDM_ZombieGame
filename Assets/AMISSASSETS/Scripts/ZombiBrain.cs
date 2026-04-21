@@ -19,7 +19,9 @@ AudioSource source;
 public AudioClip sonidoMuerte;
 public AudioClip sonidoAtaque;
 public GameObject goopFX;
-private bool estaVivo;
+private bool estaVivo=true;
+
+public GameObject recogibleCorazon;
 
 private NavMeshAgent agente;
 
@@ -35,11 +37,15 @@ private NavMeshAgent agente;
 
 
 
-    void Start()
-    {
-        StartCoroutine("DetectionRoutine");
+    void OnEnable()
+    {   
+        StartCoroutine(DetectionRoutine());
     }
 
+    void OnDisable()
+    {
+        StopAllCoroutines(); 
+    } 
     void Update()
     {
         if(agente.velocity != Vector3.zero)
@@ -57,11 +63,14 @@ private NavMeshAgent agente;
     {
         while (estaVivo)
         {
+            Debug.Log("Rutina start");
+
             // SphereCast o CheckSphere para ver si el jugador está cerca
-            bool detectarJugador = Physics.CheckSphere(transform.position, 5f, playerLayer);
+            bool detectarJugador = Physics.CheckSphere(transform.position, 20f, playerLayer);
 
             if (detectarJugador)
             {
+                Debug.Log("detectado player por sfera zombi");
                 // Cambiar a Persecución
                 modoPatrulla.enabled = false;
                 modoAtaque.enabled = true;
@@ -79,19 +88,24 @@ private NavMeshAgent agente;
     public void morir()
     {
         //detener movimiento
-        GetComponent<Zombi_Patrulla>().detenerAgente();
+        GetComponent<NavMeshAgent>().speed=0;
         //sonido muerte
         source.PlayOneShot(sonidoMuerte);
         //animacion muerte
         anim.SetBool("estaVivo",false);
         //Efecto muerte
         activaEfectoMuerte();
+
+        InstanciaCorazon();
    
     }
 
     public void restaurar()
     {
-        GetComponent<Zombi_Patrulla>().reanudarAgente();
+      Zombi_Patrulla patrol=   GetComponent<Zombi_Patrulla>();
+      patrol.enabled =true;
+      patrol.reanudarAgente();
+      
         anim.SetBool("estaVivo",true);
     }
 
@@ -105,6 +119,13 @@ private NavMeshAgent agente;
     {
         goopFX.SetActive(false);
         ZombiPool.Instance.GuardarZombi(this.gameObject);
+    }
+
+    public void InstanciaCorazon()
+    {
+        GameObject clon = Instantiate(recogibleCorazon);
+        clon.transform.position = transform.position;
+        clon.SetActive(true);
     }
     
     

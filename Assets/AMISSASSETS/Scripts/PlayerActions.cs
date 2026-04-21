@@ -7,12 +7,16 @@ public class PlayerActions : MonoBehaviour
     AnimationManager anim;
     PlayerMovement playerMovement;
     public Transform spawnPoint;
+    public AudioClip sonidoDisparo;
+    AudioSource source;
+    public GameObject muzzleFlash;
 
 
     void Awake()
     {
         anim = GetComponent<AnimationManager>();
         playerMovement = GetComponent<PlayerMovement>();
+        source = GetComponent<AudioSource>();
         
     }
 
@@ -44,9 +48,19 @@ public class PlayerActions : MonoBehaviour
             bullet.transform.position = spawnPoint.position;
             bullet.transform.rotation = spawnPoint.rotation;
             
+            source.PlayOneShot(sonidoDisparo);
+
+            muzzleFlash.SetActive(true);
+            Invoke("DesactivarMuzzle",0.5f);
+
             // Al activarla, el script Bullet hará el resto
             bullet.SetActive(true);
         }
+    }
+
+    public void DesactivarMuzzle()
+    {
+        muzzleFlash.SetActive(false);
     }
 
     public void golpear()
