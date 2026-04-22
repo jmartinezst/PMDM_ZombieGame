@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class AnimationManager : MonoBehaviour
+public class PlayerAnimation : MonoBehaviour
 {
     public GameObject animGO;
     Animator anim;
@@ -20,41 +20,37 @@ public class AnimationManager : MonoBehaviour
 
 
 
-[ContextMenu("ANDA")]
+
     public void andar()
     {
         anim.SetBool("estaAndando",true);
     }
-[ContextMenu("PARA")]
+
     public void parar()
     {
         anim.SetBool("estaAndando",false);
     }
 
-
-   [ContextMenu("VIVE")]
     public void revivir()
     {
          anim.SetBool("estaVivo",true);
     }
-    [ContextMenu("MUERE")]
+  
     public void morir()
     {
         anim.SetBool("estaVivo",false);
     }
 
-
-[ContextMenu("SUFRE")]
      public void sufrir()
     {
-        StartCoroutine(enciendeYApaga("sufriendo"));
+        StartCoroutine(enciendeYApaga("golpeado"));
     }
-    [ContextMenu("ATACA1")]
+
     public void atacar1()
     {
         StartCoroutine(enciendeYApaga("atacando1"));
     }
-    [ContextMenu("ATACA2")]
+ 
     public void atacar2()
     {
         StartCoroutine(enciendeYApaga("atacando2"));

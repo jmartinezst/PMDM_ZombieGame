@@ -43,9 +43,12 @@ public GameObject animGO;
         }
         if(vectorMovimiento.magnitude > 0.1f)
         {
-            valorJoystick = new Vector3( vectorMovimiento.x, 0 , vectorMovimiento.y);
-            agente.Move(valorJoystick * velocidad * Time.deltaTime);
+            valorJoystick = new Vector3( vectorMovimiento.x, 0 , vectorMovimiento.y); 
 
+            if(agente.isOnNavMesh)
+            {
+            agente.Move(valorJoystick * velocidad * Time.deltaTime);
+            }
             Quaternion targetRotation = Quaternion.LookRotation(valorJoystick);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
 
@@ -54,7 +57,11 @@ public GameObject animGO;
         else
         {
             valorJoystick = Vector3.zero;
+            
+            if(agente.isOnNavMesh)
+            {
             agente.Move(Vector3.zero);   
+            }
              anim.SetBool("estaAndando", false);       
         }
     }

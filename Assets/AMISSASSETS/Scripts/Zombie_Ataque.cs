@@ -21,8 +21,7 @@ public class Zombi_Ataque : MonoBehaviour
         agente = GetComponent<NavMeshAgent>();
         brain = GetComponent<ZombiBrain>();
         anim = brain.animGO.GetComponent<Animator>();
-        playerTarget = GameObject.FindGameObjectWithTag("Player");
-        
+        playerTarget = GameObject.FindGameObjectWithTag("Player");  
     }
 
    

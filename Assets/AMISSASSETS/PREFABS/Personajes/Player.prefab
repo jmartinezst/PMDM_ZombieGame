@@ -139,8 +139,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6050532253065025889}
   - component: {fileID: 4668179065863432949}
-  - component: {fileID: 9043495616517823966}
-  - component: {fileID: 217178657464566215}
   - component: {fileID: 3639200456056183619}
   - component: {fileID: 4889714249520205047}
   - component: {fileID: 5018936108275117368}
@@ -149,6 +147,7 @@ GameObject:
   - component: {fileID: 9190226972634268210}
   - component: {fileID: 2425918512240319101}
   - component: {fileID: 464264466130510140}
+  - component: {fileID: 1804306064491563971}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -195,35 +194,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &9043495616517823966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231613377134035646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d7bc9be7b5a1e4c8f34ff97f9a013e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  animGO: {fileID: 6960581480790520858}
-  sonidoDisparo: {fileID: 8300000, guid: 52592578d118ea84e849f5fc51e8932c, type: 3}
-  sonidoDolor: {fileID: 8300000, guid: c0d41130fd5c54f4eb61d7a0f9b20844, type: 3}
-  sonidoMuerte: {fileID: 8300000, guid: 0c3941e64298e6e48af923f5fd1746de, type: 3}
---- !u!114 &217178657464566215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231613377134035646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b235068e6bb7e4c91dd3b286eaeab9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerJoystickNavigation
-  posicionOriginal: {x: 0, y: 0}
 --- !u!114 &3639200456056183619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,9 +206,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda532aadf9617548a7072306d7006d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  vidaInicial: 10000
   healthBarGO: {fileID: 0}
   sonidoQueja: {fileID: 8300000, guid: 5b417dcb432c287499f1aa84147a1563, type: 3}
-  animGO: {fileID: 6960581480790520858}
 --- !u!136 &4889714249520205047
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -441,6 +411,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PoolBalas
   prefabBala: {fileID: 6130413234057116295, guid: 3032e448c8b9c4a40905561bb6c0f41e, type: 3}
   poolSize: 12
+--- !u!114 &1804306064491563971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231613377134035646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502ac9bf0237f0b40a1bc02762e0104f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimation
+  animGO: {fileID: 6960581480790520858}
+  sonidoDisparo: {fileID: 8300000, guid: 52592578d118ea84e849f5fc51e8932c, type: 3}
+  sonidoDolor: {fileID: 8300000, guid: 5b417dcb432c287499f1aa84147a1563, type: 3}
+  sonidoMuerte: {fileID: 8300000, guid: 0c3941e64298e6e48af923f5fd1746de, type: 3}
 --- !u!1 &1559450696097191253
 GameObject:
   m_ObjectHideFlags: 0

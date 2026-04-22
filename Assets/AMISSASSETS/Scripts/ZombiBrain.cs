@@ -17,13 +17,12 @@ public LayerMask playerLayer;
 
 AudioSource source;
 public AudioClip sonidoMuerte;
-public AudioClip sonidoAtaque;
 public GameObject goopFX;
+public AudioClip sonidoAtaque;
 private bool estaVivo=true;
-
 public GameObject recogibleCorazon;
-
 private NavMeshAgent agente;
+
 
 
     void Awake()

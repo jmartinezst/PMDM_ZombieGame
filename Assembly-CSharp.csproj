@@ -55,8 +55,8 @@
     <Compile Include="Assets\AMISSASSETS\Scripts\AudioManager.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\AMISSASSETS\Scripts\PlayerAnimation.cs" />
     <Compile Include="Assets\UnityTechnologies\ParticlePack\EffectExamples\Misc Effects\Scripts\SpawnEffect.cs" />
-    <Compile Include="Assets\AMISSASSETS\Scripts\PlayerJoystickNavigation.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\PlayerInventario.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\FinishScript.cs" />
     <Compile Include="Assets\UnityTechnologies\ParticlePack\Shared\Scripts\ProximityActivate.cs" />
@@ -67,7 +67,6 @@
     <Compile Include="Assets\UnityTechnologies\ParticlePack\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\StarterAssets\FirstPersonController\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\RecogibleSalud.cs" />
-    <Compile Include="Assets\AMISSASSETS\Scripts\AnimationManager.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\DontDestroy.cs" />
     <Compile Include="Assets\AMISSASSETS\Scripts\CanvasRoll.cs" />
     <Compile Include="Assets\UnityTechnologies\ParticlePack\Shared\Ramps\Runtime\RampAsset.cs" />
@@ -1391,12 +1390,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor.Shared">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.2D.Sprite.AIIntegration.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.AIIntegration.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor.Shared">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.Shared.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.InputSystem">

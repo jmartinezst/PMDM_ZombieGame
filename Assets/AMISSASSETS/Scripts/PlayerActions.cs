@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class PlayerActions : MonoBehaviour
 {
  
-    AnimationManager anim;
+    PlayerAnimation anim;
     PlayerMovement playerMovement;
     public Transform spawnPoint;
     public AudioClip sonidoDisparo;
@@ -14,7 +14,7 @@ public class PlayerActions : MonoBehaviour
 
     void Awake()
     {
-        anim = GetComponent<AnimationManager>();
+        anim = GetComponent<PlayerAnimation>();
         playerMovement = GetComponent<PlayerMovement>();
         source = GetComponent<AudioSource>();
         

@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
   
     MenuManager menuManager;
-    float vidaInicial =100;
+    public float vidaInicial =100;
     float puntosSalud;
 
     public GameObject healthBarGO;
@@ -15,8 +15,8 @@ public class PlayerHealth : MonoBehaviour
 
     AudioSource source;
     public AudioClip sonidoQueja;
-    Animator anim;
-    public GameObject animGO;
+    PlayerAnimation anim;
+   
     
 
 
@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         healthBarGO = GameObject.FindGameObjectWithTag("HealthBar");
         menuManager = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MenuManager>();
         source =  GetComponent<AudioSource>();
-        anim = animGO.GetComponent<Animator>();
+        anim = GetComponent<PlayerAnimation>();
         barraSalud = healthBarGO.GetComponent<Image>(); 
         if(barraSalud == null)
         {
@@ -40,8 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void restarVida(int cantidad)
     {
-        anim.SetTrigger("golpeado");
-        anim.ResetTrigger("golpeado");
+        anim.sufrir();
 
         source.PlayOneShot(sonidoQueja);
         puntosSalud -= cantidad;
@@ -50,9 +49,9 @@ public class PlayerHealth : MonoBehaviour
         {
             //detener agente
 
-            GetComponent<NavMeshAgent>().speed=0;
+            GetComponent<NavMeshAgent>().enabled=false;
             GetComponent<Collider>().enabled=false;
-              anim.SetBool("estaVivo", false);
+            anim.morir();
             Debug.Log("Has muerto");
             puntosSalud =0;
             menuManager.playerMuerto();
@@ -63,16 +62,19 @@ public class PlayerHealth : MonoBehaviour
     public void sumarVida(int cantidad)
     {
         puntosSalud += cantidad;
-        //asegurar a la vida maxima 
-        if(puntosSalud > vidaInicial) puntosSalud = vidaInicial;
+        if(puntosSalud > vidaInicial)
+        { 
+            puntosSalud = vidaInicial;
+        }
         actualizarBarraVida();
     }
 
     public void restablecerVida()
     {
         puntosSalud = vidaInicial;
-        GetComponent<NavMeshAgent>().speed=3.5f;
-            GetComponent<Collider>().enabled=true;
+        GetComponent<NavMeshAgent>().enabled=true;
+        GetComponent<Collider>().enabled=true;
+        anim.revivir();
     }
 
     public void actualizarBarraVida()
