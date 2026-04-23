@@ -23,6 +23,8 @@ private bool estaVivo=true;
 public GameObject recogibleCorazon;
 private NavMeshAgent agente;
 
+public float radioDeteccion =4f;
+
 
 
     void Awake()
@@ -65,7 +67,7 @@ private NavMeshAgent agente;
             Debug.Log("Rutina start");
 
             // SphereCast o CheckSphere para ver si el jugador está cerca
-            bool detectarJugador = Physics.CheckSphere(transform.position, 20f, playerLayer);
+            bool detectarJugador = Physics.CheckSphere(transform.position, radioDeteccion, playerLayer);
 
             if (detectarJugador)
             {

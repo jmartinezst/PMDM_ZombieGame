@@ -10,6 +10,7 @@ public class RecogibleSalud : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {         
             other.gameObject.GetComponent<PlayerHealth>().sumarVida(20);
+            Destroy(this.gameObject);
         }
     }
 }

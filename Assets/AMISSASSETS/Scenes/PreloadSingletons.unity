@@ -155,18 +155,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 386810322101916523, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 386810322101916523, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 386810322101916523, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 859525402834736352, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -300,7 +288,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.07924521, g: 0.07719935, b: 0.07161973, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30

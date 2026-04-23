@@ -36,6 +36,7 @@ public GameObject fxSliderGO;
         // El slider suele ir de 0.0001 a 1, pero el Mixer usa Decibelios (-80 a 0)
         myMixer.SetFloat("MusicVol", Mathf.Lerp(-80f, -10f, volume));
         PlayerPrefs.SetFloat("SavedMusicVolume", volume);
+         Debug.Log("Guardado");
     }
 
 
@@ -43,11 +44,13 @@ public GameObject fxSliderGO;
     {
         myMixer.SetFloat("FxVol", Mathf.Lerp(-80f, -10f, volume));
         PlayerPrefs.SetFloat("SavedFXVolume", volume);
+         Debug.Log("Guardado");
     }
 
 
     private void cargarVolumen()
     {
+        Debug.Log("Cargando volumen");
         float musicVol = PlayerPrefs.GetFloat("SavedMusicVolume", 0.75f);
         float fxVol = PlayerPrefs.GetFloat("SavedFXVolume", 0.75f);
         
