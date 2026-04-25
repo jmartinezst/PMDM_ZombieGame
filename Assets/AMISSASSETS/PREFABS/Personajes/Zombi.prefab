@@ -110,7 +110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5195268240270300622
 Transform:
   m_ObjectHideFlags: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   goopFX: {fileID: 3330613426924566210}
   sonidoAtaque: {fileID: 8300000, guid: 0c3941e64298e6e48af923f5fd1746de, type: 3}
   recogibleCorazon: {fileID: 8284632068873248330, guid: e07654212cd32784fbff364daab071dc, type: 3}
+  radioDeteccion: 4
 --- !u!82 &250255547235896666
 AudioSource:
   m_ObjectHideFlags: 0

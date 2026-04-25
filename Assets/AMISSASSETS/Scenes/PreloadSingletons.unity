@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1264673844928216120, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1612576471582423247, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -239,12 +243,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2793472547517581573, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2852826232542369881, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4880389084086073264, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469470854756044466, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7478970430600783376, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
@@ -254,6 +266,10 @@ PrefabInstance:
     - target: {fileID: 7694985648747549841, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
       propertyPath: m_Name
       value: Main_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8922877725425967846, guid: 9910becc55a766c45ba905818ef978d0, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
