@@ -32,12 +32,12 @@ public class FinishScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("te faltan herramientas" + (3- herramientasPlayer));
+               
                 if(sonidoError !=null)
                 {
                 source.PlayOneShot(sonidoError);
                 }
-                avisos.SetText("te faltan herramientas" + (3- herramientasPlayer));
+                avisos.SetText("te faltan llaves" + (3- herramientasPlayer));
                 Invoke("borrarMensaje",2f);
             }
 
