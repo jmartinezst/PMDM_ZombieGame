@@ -32886,14 +32886,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3639200456056183619, guid: c2eb1a699a725d2469fe076ad07b6a0f, type: 3}
-      propertyPath: vidaInicial
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 4668179065863432949, guid: c2eb1a699a725d2469fe076ad07b6a0f, type: 3}
-      propertyPath: m_WalkableMask
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6050532253065025889, guid: c2eb1a699a725d2469fe076ad07b6a0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

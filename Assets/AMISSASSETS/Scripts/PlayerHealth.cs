@@ -72,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
     public void restablecerVida()
     {
         puntosSalud = vidaInicial;
+        actualizarBarraVida();
         GetComponent<NavMeshAgent>().enabled=true;
         GetComponent<Collider>().enabled=true;
         anim.revivir();

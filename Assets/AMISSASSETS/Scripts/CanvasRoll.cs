@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -16,6 +17,7 @@ public class CanvasRoll : MonoBehaviour
 
     void OnEnable()
     {
+        if(SceneManager.GetActiveScene().buildIndex ==3)
         // Reseteamos todo al activar
         ejecutando = false;
         if (scrollRect != null)

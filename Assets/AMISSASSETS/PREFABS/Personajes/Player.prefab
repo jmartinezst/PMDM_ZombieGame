@@ -184,7 +184,7 @@ NavMeshAgent:
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 48
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -192,7 +192,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &3639200456056183619
 MonoBehaviour:
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda532aadf9617548a7072306d7006d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  vidaInicial: 10000
+  vidaInicial: 300
   healthBarGO: {fileID: 0}
   sonidoQueja: {fileID: 8300000, guid: 5b417dcb432c287499f1aa84147a1563, type: 3}
 --- !u!136 &4889714249520205047
