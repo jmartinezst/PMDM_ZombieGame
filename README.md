@@ -31,4 +31,4 @@
 
 ---
 **Autor:** Javier Martínez Sodric  
-**Proyecto:** Programación Multimedia y Dispositovs Móviles
+**Proyecto:** Programación Multimedia y Dispositivos Móviles
